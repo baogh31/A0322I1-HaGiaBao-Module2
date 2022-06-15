@@ -1,25 +1,34 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        int Numbers = 20;
-        int count = 0;
-        int N = 2;
-        while (count < Numbers) {
-            boolean check = true;
-
-            for (int i = 2; i < N; i++) {
-                if (N % i == 0) {
-                    check = false;
-                    break;
-                }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số dòng ");
+        int row = scanner.nextInt();
+        int[][] arr = new int[row][row];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print("Nhập phần tử thứ " + j + " hàng " + i + ": ");
+                int num = scanner.nextInt();
+                arr[i][j] = num;
             }
-            if (check == true) {
-                count++;
-                System.out.println(N + " ");
-            }
-            N++;
         }
+        System.out.println("Ma trận: ");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        int sum = 0;
+        int dem = 0;
+        for (int i = 0; i < row; i++) {
+            sum += arr[i][dem];
+            dem++;
+        }
+        System.out.println("Tổng đường chéo chính: " + sum);
     }
 }
