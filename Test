@@ -1,0 +1,10 @@
+package com.company;
+
+public class Test {
+    public static void main(String[] args) {
+        Point point = new Point(4.6f, 2.5f);
+        MovablePoint movablePoint = new MovablePoint(point.getX(), point.getY(), 3.6f, 1.2f);
+        System.out.println(point.toString());
+        System.out.println(movablePoint.move());
+    }
+}
